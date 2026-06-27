@@ -1,0 +1,27 @@
+spring:
+  application:
+    name: Notification
+  kafka:
+    bootstrap-servers: localhost:29092
+    properties:
+      schema.registry.url: http://localhost:8081
+    consumer:
+      group-id: notification-group
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: io.confluent.kafka.serializers.KafkaAvroDeserializer
+      properties:
+        specific.avro.reader: true
+kafka:
+  topic:
+    assignment: student-mentor-assigned
+mail:
+  host: smtp.gmail.com
+  port: 587
+  username: university.center2025@gmail.com
+  password: davo0084
+  properties:
+    "[mail.smtp.auth]": true
+    "[mail.smtp.starttls.enable]": true
+server:
+  port: 8082
+
