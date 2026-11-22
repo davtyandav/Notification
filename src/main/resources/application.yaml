@@ -1,3 +1,5 @@
+server:
+  port: 8084
 spring:
   application:
     name: Notification
@@ -18,10 +20,9 @@ mail:
   host: smtp.gmail.com
   port: 587
   username: university.center2025@gmail.com
-  password: davo0084
+  password: bczo nzqt ibfe pfyg
   properties:
     "[mail.smtp.auth]": true
     "[mail.smtp.starttls.enable]": true
-server:
-  port: 8082
+
 

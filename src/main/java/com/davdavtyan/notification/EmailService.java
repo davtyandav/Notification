@@ -1,5 +1,6 @@
 package com.davdavtyan.notification;
 
+import com.davdavtyan.notification.config.MailProperties;
 import lombok.RequiredArgsConstructor;
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
@@ -9,10 +10,11 @@ import org.springframework.stereotype.Service;
 @RequiredArgsConstructor
 public class EmailService {
     private final JavaMailSender mailSender;
+    private final MailProperties mailProperties;
 
     public void sendEmail(String to, String subject, String body) {
         SimpleMailMessage message = new SimpleMailMessage();
-        message.setFrom("university.center2025@gmail.com");
+        message.setFrom(mailProperties.getUsername());
         message.setTo(to);
         message.setSubject(subject);
         message.setText(body);
